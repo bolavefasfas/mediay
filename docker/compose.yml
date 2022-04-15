@@ -121,7 +121,7 @@ services:
       - VERSION=docker
     volumes:
       - /dev/shm:/transcode
-      - ${APPDATACLOUD}plex:/config      
+      - ${APPDATASCLOUD}plex:/config      
       - ${GMEDIA}
       - ${EMEDIA}
       - ${OMEDIA}
