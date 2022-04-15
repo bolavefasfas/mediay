@@ -1,2 +1,2 @@
-0 */12 * * * /usr/bin/rclone move <local-mountpoint> gdrive-media-crypt: --config /<youruser>/.config/rclone/rclone.conf --log-file <rclone-log-dir>/upload.log --log-level INFO --delete-empty-src-dirs --fast-list --min-age 12h
-0 */12 * * * /usr/bin/rclone copy <local-mountpoint> gdrive-media: --config /<youruser>/.config/rclone/rclone.conf --log-file <rclone-log-dir>/upload.log --log-level INFO --delete-empty-src-dirs --fast-list --min-age 12h
+0 */12 * * * /usr/bin/rclone copy <local-mountpoint> gdrive-media-crypt: --config /<youruser>/.config/rclone/rclone.conf --log-file <rclone-log-dir>/upload.log --log-level INFO --delete-empty-src-dirs --fast-list --min-age 12h
+0 */12 * * * /usr/bin/rclone move <local-mountpoint> gdrive-media: --config /<youruser>/.config/rclone/rclone.conf --log-file <rclone-log-dir>/upload.log --log-level INFO --delete-empty-src-dirs --fast-list --min-age 12h
