@@ -111,18 +111,22 @@ services:
       - 8181:8181
       
   plex:
-    image: ghcr.io/linuxserver/plex
+    image: lscr.io/linuxserver/plex
     container_name: plex
     restart: unless-stopped
-    network_mode: host
+    network_mode: bridge
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
+      - VERSION=docker
     volumes:
-      - ${APPDATA}plex:/config
+      - /dev/shm:/transcode
+      - ${APPDATACLOUD}plex:/config      
       - ${GMEDIA}
       - ${EMEDIA}
       - ${OMEDIA}
+    ports:
+    - 32400:32400
       
 
   watchtower:
