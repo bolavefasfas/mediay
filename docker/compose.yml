@@ -123,6 +123,7 @@ services:
       - /dev/shm:/transcode
       - ${APPDATASCLOUD}plex:/config      
       - ${GMEDIA}
+      - ${SMEDIA}
       - ${EMEDIA}
       - ${OMEDIA}
     ports:
