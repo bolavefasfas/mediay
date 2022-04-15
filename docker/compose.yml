@@ -184,16 +184,22 @@ volumes:
       - ./letsencrypt:/etc/letsencrypt
       
     jellyfin:
-    image: jellyfin/jellyfin
+    image: lscr.io/linuxserver/jellyfin
     container_name: jellyfin
-    user: uid:gid
-    network_mode: host
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
-      - ${APPDATASCLOUD}/jellyfin/cache:/cache
       - /dev/shm:/transcode
       - ${APPDATASCLOUD}jellyfin:/config      
       - ${GMEDIA}
       - ${SMEDIA}
       - ${EMEDIA}
       - ${OMEDIA}
+    ports:
+      - 8096:8096
+      - 8920:8920 #optional
+      - 7359:7359/udp #optional
+      - 1900:1900/udp #optional      
     restart: "unless-stopped"
