@@ -5,7 +5,7 @@ After=network-online.target
 [Service]
 Type=notify
 ExecStart=/usr/bin/rclone mount \
-  --config=/home/<youruser>/.config/rclone/rclone.conf \
+  --config=/<youruser>/.config/rclone/rclone.conf \
   --log-level=INFO \
   --log-file=<rclone-log-dir>/rclone-mount.log \
   --user-agent=<useragent> \
